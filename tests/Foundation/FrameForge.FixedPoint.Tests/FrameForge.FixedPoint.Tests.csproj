@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Bedrock\FrameForge.FixedPoint\FrameForge.FixedPoint.csproj" />
+    <ProjectReference Include="..\..\..\src\Foundation\FrameForge.FixedPoint\FrameForge.FixedPoint.csproj" />
   </ItemGroup>
 
   <ItemGroup>
