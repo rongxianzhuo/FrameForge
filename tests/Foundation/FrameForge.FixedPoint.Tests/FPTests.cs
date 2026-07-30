@@ -1,7 +1,7 @@
-using FrameForge.FixedPoint;
+using FrameForge.Foundation.FixedPoint;
 using Xunit;
 
-namespace FrameForge.FixedPoint.Tests;
+namespace FrameForge.Foundation.FixedPoint.Tests;
 
 // ============================================================================
 // FPTests — Comprehensive unit tests for the FP (Q32.32) fixed-point type.

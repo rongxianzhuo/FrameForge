@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace FrameForge.FixedPoint;
+namespace FrameForge.Foundation.FixedPoint;
 
 /// <summary>
 /// Represents a Q32.32 fixed-point number with 32 bits for the integer part

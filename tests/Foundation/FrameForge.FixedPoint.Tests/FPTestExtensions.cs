@@ -1,7 +1,7 @@
-using FrameForge.FixedPoint;
+using FrameForge.Foundation.FixedPoint;
 using Xunit;
 
-namespace FrameForge.FixedPoint.Tests;
+namespace FrameForge.Foundation.FixedPoint.Tests;
 
 /// <summary>
 /// Test helper extensions for FP assertions.

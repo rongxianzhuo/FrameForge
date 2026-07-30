@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <RootNamespace>FrameForge.Foundation.FixedPoint.Tests</RootNamespace>
+    <AssemblyName>FrameForge.Foundation.FixedPoint.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

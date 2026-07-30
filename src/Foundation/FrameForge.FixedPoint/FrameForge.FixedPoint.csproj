@@ -4,13 +4,13 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>FrameForge.FixedPoint</RootNamespace>
-    <AssemblyName>FrameForge.FixedPoint</AssemblyName>
+    <RootNamespace>FrameForge.Foundation.FixedPoint</RootNamespace>
+    <AssemblyName>FrameForge.Foundation.FixedPoint</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="FrameForge.FixedPoint.Tests" />
+    <InternalsVisibleTo Include="FrameForge.Foundation.FixedPoint.Tests" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 using System;
 
-namespace FrameForge.FixedPoint;
+namespace FrameForge.Foundation.FixedPoint;
 
 // ============================================================================
 // Trigonometry: Sin, Cos, Tan, Asin, Acos, Atan, Atan2

@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 
-namespace FrameForge.FixedPoint;
+namespace FrameForge.Foundation.FixedPoint;
 
 // ============================================================================
 // Advanced Math: Sqrt, Exp, Log, Pow2
