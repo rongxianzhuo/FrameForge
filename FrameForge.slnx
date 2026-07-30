@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Bedrock/">
+    <Project Path="src/Bedrock/FrameForge.FixedPoint/FrameForge.FixedPoint.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Bedrock/">
+    <Project Path="tests/Bedrock/FrameForge.FixedPoint.Tests/FrameForge.FixedPoint.Tests.csproj" />
+  </Folder>
+</Solution>
