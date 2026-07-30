@@ -4,9 +4,15 @@
     <Project Path="src/Foundation/FrameForge.FixedPoint/FrameForge.FixedPoint.csproj" />
     <Project Path="src/Foundation/FrameForge.Math/FrameForge.Math.csproj" />
   </Folder>
+  <Folder Name="/src/Core/">
+    <Project Path="src/Core/FrameForge.Core/FrameForge.Core.csproj" />
+  </Folder>
   <Folder Name="/tests/" />
   <Folder Name="/tests/Foundation/">
     <Project Path="tests/Foundation/FrameForge.FixedPoint.Tests/FrameForge.FixedPoint.Tests.csproj" />
     <Project Path="tests/Foundation/FrameForge.Math.Tests/FrameForge.Math.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Core/">
+    <Project Path="tests/Core/FrameForge.Core.Tests/FrameForge.Core.Tests.csproj" />
   </Folder>
 </Solution>
