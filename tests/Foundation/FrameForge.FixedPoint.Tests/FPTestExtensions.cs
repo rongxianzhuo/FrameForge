@@ -1,7 +1,8 @@
 using FrameForge.Foundation.FixedPoint;
 using Xunit;
 
-namespace FrameForge.Foundation.FixedPoint.Tests;
+namespace FrameForge.Foundation.FixedPoint.Tests
+{
 
 /// <summary>
 /// Test helper extensions for FP assertions.
@@ -43,4 +44,5 @@ public static class FPTestExtensions
         // 1e-5 * 2^32 ≈ 42950 raw units
         ShouldBeApproximately(actual, expected, FP.Epsilon * FP.FromInt(50000));
     }
+}
 }

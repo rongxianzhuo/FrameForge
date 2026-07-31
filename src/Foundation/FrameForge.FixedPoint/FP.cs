@@ -1,7 +1,8 @@
 using System;
 using System.Globalization;
 
-namespace FrameForge.Foundation.FixedPoint;
+namespace FrameForge.Foundation.FixedPoint
+{
 
 /// <summary>
 /// Represents a Q32.32 fixed-point number with 32 bits for the integer part
@@ -607,4 +608,5 @@ public readonly partial struct FP : IEquatable<FP>, IComparable<FP>
         string sign = negative ? "-" : "";
         return $"{sign}{intPart}.{fracScaled:D6}";
     }
+}
 }

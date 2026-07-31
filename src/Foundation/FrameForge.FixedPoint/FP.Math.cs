@@ -1,7 +1,8 @@
 using System;
 using System.Numerics;
 
-namespace FrameForge.Foundation.FixedPoint;
+namespace FrameForge.Foundation.FixedPoint
+{
 
 // ============================================================================
 // Advanced Math: Sqrt, Exp, Log, Pow2
@@ -240,4 +241,5 @@ public readonly partial struct FP
         // Fractional exponent: 2^x = exp(x * ln(2))
         return Exp(exponent * Ln2);
     }
+}
 }

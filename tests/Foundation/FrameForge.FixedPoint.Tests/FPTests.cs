@@ -1,7 +1,8 @@
 using FrameForge.Foundation.FixedPoint;
 using Xunit;
 
-namespace FrameForge.Foundation.FixedPoint.Tests;
+namespace FrameForge.Foundation.FixedPoint.Tests
+{
 
 // ============================================================================
 // FPTests — Comprehensive unit tests for the FP (Q32.32) fixed-point type.
@@ -1387,4 +1388,5 @@ public class FPTests
         Assert.Equal(FP.One, FP.Sign(FP.Epsilon));
         Assert.Equal(FP.MinusOne, FP.Sign(-FP.Epsilon));
     }
+}
 }

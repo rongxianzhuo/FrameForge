@@ -1,6 +1,7 @@
 using System;
 
-namespace FrameForge.Foundation.FixedPoint;
+namespace FrameForge.Foundation.FixedPoint
+{
 
 // ============================================================================
 // Trigonometry: Sin, Cos, Tan, Asin, Acos, Atan, Atan2
@@ -390,4 +391,5 @@ public readonly partial struct FP
     {
         return Tan(degrees * Deg2Rad);
     }
+}
 }
