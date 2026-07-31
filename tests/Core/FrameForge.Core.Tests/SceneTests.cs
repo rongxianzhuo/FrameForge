@@ -1,4 +1,4 @@
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Tests for <see cref="Scene"/> object management, lookup methods,
@@ -266,4 +266,5 @@ public class SceneTests
         Assert.Contains("Start:Spawned", log);
         Assert.Contains("Update:Spawned", log);
     }
+}
 }

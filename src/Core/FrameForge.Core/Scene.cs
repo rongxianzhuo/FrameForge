@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FrameForge.Core;
+namespace FrameForge.Core {
 
 /// <summary>
 /// The root container for all <see cref="GameObject"/> instances. A Scene drives
@@ -487,4 +487,5 @@ public class Scene
 
         _pendingDestroy.Clear();
     }
+}
 }

@@ -1,4 +1,4 @@
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// A component that tracks lifecycle calls into a shared log.
@@ -86,4 +86,5 @@ public class MultiSpawnerComponent : Component
             }
         }
     }
+}
 }

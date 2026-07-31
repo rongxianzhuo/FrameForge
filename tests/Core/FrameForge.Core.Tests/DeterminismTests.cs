@@ -1,4 +1,4 @@
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Tests verifying deterministic behaviour: traversal order of objects
@@ -161,4 +161,5 @@ public class DeterminismTests
             Assert.Equal("Update:Spawned2", updates[2]);
         }
     }
+}
 }

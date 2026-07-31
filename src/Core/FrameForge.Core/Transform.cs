@@ -1,7 +1,7 @@
 using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 
-namespace FrameForge.Core;
+namespace FrameForge.Core {
 
 /// <summary>
 /// Represents the spatial position, rotation, and scale of a <see cref="GameObject"/>.
@@ -278,4 +278,5 @@ public class Transform : Component
     {
         return b == FP.Zero ? FP.Zero : a / b;
     }
+}
 }

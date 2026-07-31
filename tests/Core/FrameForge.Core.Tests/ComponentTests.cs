@@ -1,4 +1,4 @@
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Tests for <see cref="Component"/> lifecycle, properties, and GameObject integration.
@@ -144,4 +144,5 @@ public class ComponentTests
     }
 
     private class TestComponent : Component { }
+}
 }

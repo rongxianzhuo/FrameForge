@@ -1,4 +1,4 @@
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Comprehensive tests for the full lifecycle order:
@@ -226,4 +226,5 @@ public class LifecycleTests
         Assert.Contains("Destroy:A", log);
         Assert.Contains("Destroy:B", log);
     }
+}
 }

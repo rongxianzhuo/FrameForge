@@ -2,7 +2,7 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Test helper extensions for Core module assertions.
@@ -46,4 +46,5 @@ public static class TestExtensions
         Assert.True(direct || negated,
             $"Expected ~{expected}, got {actual}");
     }
+}
 }

@@ -1,7 +1,7 @@
 using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Tests for <see cref="Transform"/> local/world position, rotation, scale,
@@ -525,4 +525,5 @@ public class TransformTests
         // Child's world Up = (0,1,0) rotated by parent's 90° X pitch ≈ (0, 0, 1)
         child.Transform.Up.ShouldBeApproximately(Vector3.Forward);
     }
+}
 }

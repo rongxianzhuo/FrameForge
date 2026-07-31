@@ -1,4 +1,4 @@
-namespace FrameForge.Core;
+namespace FrameForge.Core {
 
 /// <summary>
 /// Base class for all logic components. Each <see cref="Component"/> is attached to
@@ -125,4 +125,5 @@ public class Component
     {
         return _gameObject.GetComponents<T>();
     }
+}
 }

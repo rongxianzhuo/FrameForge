@@ -1,6 +1,6 @@
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Core.Tests;
+namespace FrameForge.Core.Tests {
 
 /// <summary>
 /// Tests for <see cref="GameObject"/> creation, component management,
@@ -371,4 +371,5 @@ public class GameObjectTests
         Assert.Empty(scene.FindByTag("OldTag"));
         Assert.Single(scene.FindByTag("NewTag"));
     }
+}
 }

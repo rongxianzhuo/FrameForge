@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FrameForge.Core;
+namespace FrameForge.Core {
 
 /// <summary>
 /// The fundamental container for <see cref="Component"/> instances in the scene.
@@ -459,4 +459,5 @@ public class GameObject
         }
         return false;
     }
+}
 }
