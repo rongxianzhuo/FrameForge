@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FrameForge.Adapters.Unity</RootNamespace>
+    <AssemblyName>FrameForge.Adapters.Unity</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>12.0</LangVersion>
+  </PropertyGroup>
+
+  <!--
+    Dual-track build strategy:
+    1. Inside Unity: .asmdef handles compilation; Unity provides UnityEngine.dll.
+    2. Outside Unity (CI / validation):
+       - FrameForgeHost.cs is excluded (requires UnityEngine types)
+       - TimeProvider.cs compiles standalone (only depends on FrameForge.Core)
+       - Set $(UnityEnginePath) to a Unity installation to compile everything.
+
+    Example: dotnet build /p:UnityEnginePath=/path/to/Unity/Editor/Data/Managed
+  -->
+
+  <!-- When building outside Unity, only compile Unity-independent sources. -->
+  <ItemGroup Condition="'$(UnityEnginePath)' == ''">
+    <Compile Remove="FrameForgeHost.cs" />
+  </ItemGroup>
+
+  <!-- Unity references: only resolved when UnityEnginePath is set. -->
+  <ItemGroup Condition="'$(UnityEnginePath)' != ''">
+    <Reference Include="UnityEngine">
+      <HintPath>$(UnityEnginePath)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(UnityEnginePath)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FrameForge.Core\FrameForge.Core.csproj" />
+  </ItemGroup>
+
+</Project>

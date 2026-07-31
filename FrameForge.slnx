@@ -7,6 +7,9 @@
   <Folder Name="/src/Core/">
     <Project Path="src/Core/FrameForge.Core/FrameForge.Core.csproj" />
   </Folder>
+  <Folder Name="/src/Adapters/">
+    <Project Path="src/Adapters/FrameForge.Unity/FrameForge.Unity.csproj" />
+  </Folder>
   <Folder Name="/tests/" />
   <Folder Name="/tests/Foundation/">
     <Project Path="tests/Foundation/FrameForge.FixedPoint.Tests/FrameForge.FixedPoint.Tests.csproj" />

@@ -1,0 +1,14 @@
+{
+    "name": "FrameForge.Adapters.Unity",
+    "rootNamespace": "FrameForge.Adapters.Unity",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
