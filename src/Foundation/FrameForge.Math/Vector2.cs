@@ -2,8 +2,8 @@ using System;
 using System.Globalization;
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// Represents a two-dimensional vector using <see cref="FP"/> fixed-point numbers.
 /// All operations are deterministic across platforms.
@@ -281,4 +281,5 @@ public readonly partial struct Vector2 : IEquatable<Vector2>
         result = new Vector2(x, y);
         return true;
     }
+}
 }

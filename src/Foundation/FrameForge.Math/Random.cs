@@ -1,7 +1,7 @@
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// A deterministic pseudo-random number generator based on xorshift128+.
 /// Given the same seed, produces the exact same sequence on all platforms.
@@ -214,4 +214,5 @@ public class Random
             FP.Cos(phi)
         );
     }
+}
 }

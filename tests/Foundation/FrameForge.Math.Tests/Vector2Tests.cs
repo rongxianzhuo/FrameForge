@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 public class Vector2Tests
 {
     // ========================================================================
@@ -225,4 +225,5 @@ public class Vector2Tests
     [Fact] public void Reflect_45Degree_Works() { var incoming = new Vector2(FP.One, FP.MinusOne).Normalized; var normal = Vector2.Up; var reflected = Vector2.Reflect(incoming, normal); reflected.Y.ShouldBeApproximately(FP.Sqrt(FP.FromInt(2)) / FP.Two); }
     [Fact] public void TryParse_EmptyOrWhitespace_ReturnsFalse() { Assert.False(Vector2.TryParse("", out _)); Assert.False(Vector2.TryParse("   ", out _)); }
     [Fact] public void TryParse_MissingClosingParen_ReturnsFalse() => Assert.False(Vector2.TryParse("(1.0, 2.0", out _));
+}
 }

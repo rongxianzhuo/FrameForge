@@ -1,8 +1,8 @@
 using System.Numerics;
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// Extended math utility functions that complement <see cref="FPMath"/>.
 /// </summary>
@@ -50,4 +50,5 @@ public static class MathEx
         // Use BitOperations for efficient computation
         return (int)(0x80000000UL >> (BitOperations.LeadingZeroCount((uint)(value - 1)) - 1));
     }
+}
 }

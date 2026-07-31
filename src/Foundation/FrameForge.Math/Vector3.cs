@@ -2,8 +2,8 @@ using System;
 using System.Globalization;
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// Represents a three-dimensional vector using <see cref="FP"/> fixed-point numbers.
 /// All operations are deterministic across platforms.
@@ -421,4 +421,5 @@ public readonly partial struct Vector3 : IEquatable<Vector3>
         result = new Vector3(x, y, z);
         return true;
     }
+}
 }

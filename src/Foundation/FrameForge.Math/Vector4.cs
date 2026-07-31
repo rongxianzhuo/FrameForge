@@ -2,8 +2,8 @@ using System;
 using System.Globalization;
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// Represents a four-dimensional vector using <see cref="FP"/> fixed-point numbers.
 /// All operations are deterministic across platforms.
@@ -266,4 +266,5 @@ public readonly partial struct Vector4 : IEquatable<Vector4>
         result = new Vector4(x, y, z, w);
         return true;
     }
+}
 }

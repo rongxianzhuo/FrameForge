@@ -1,7 +1,7 @@
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// Provides common mathematical functions operating on <see cref="FP"/> values.
 /// This is the Unity <c>Mathf</c>-equivalent for the FrameForge framework.
@@ -333,4 +333,5 @@ public static class FPMath
     /// <paramref name="b"/> is less than <paramref name="tolerance"/>.
     /// </summary>
     public static bool Approximately(FP a, FP b, FP tolerance) => FP.Approximately(a, b, tolerance);
+}
 }

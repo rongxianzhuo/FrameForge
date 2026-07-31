@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 public class RandomTests
 {
     // ========================================================================
@@ -263,4 +263,5 @@ public class RandomTests
         int val = rng.Next(int.MinValue, int.MaxValue);
         Assert.True(val >= int.MinValue && val < int.MaxValue);
     }
+}
 }

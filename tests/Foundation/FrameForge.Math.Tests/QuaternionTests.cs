@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 public class QuaternionTests
 {
     // ========================================================================
@@ -616,4 +616,5 @@ public class QuaternionTests
         var rotated = q * Vector3.Forward;
         rotated.ShouldBeApproximately(Vector3.Back);
     }
+}
 }

@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 public class Vector4Tests
 {
     [Fact] public void Constants_Zero_IsZero() => Assert.Equal(Vector4.Zero, new Vector4(FP.Zero, FP.Zero, FP.Zero, FP.Zero));
@@ -52,4 +52,5 @@ public class Vector4Tests
     [Fact] public void Dot_ZeroVector_ReturnsZero() => Assert.Equal(FP.Zero, Vector4.Dot(Vector4.Zero, Vector4.One));
     [Fact] public void TryParse_EmptyString_ReturnsFalse() => Assert.False(Vector4.TryParse("", out _));
     [Fact] public void TryParse_TooFewComponents_ReturnsFalse() => Assert.False(Vector4.TryParse("(1,2,3)", out _));
+}
 }

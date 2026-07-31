@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 /// <summary>
 /// Test helper extensions for fixed-point math assertions.
 /// </summary>
@@ -133,4 +133,5 @@ public static class TestExtensions
     {
         ShouldBeApproximately(actual, expected, VecTolerance);
     }
+}
 }

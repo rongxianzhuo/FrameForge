@@ -2,8 +2,8 @@ using System;
 using System.Globalization;
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Foundation.Math;
-
+namespace FrameForge.Foundation.Math
+{
 /// <summary>
 /// Represents a rotation as a quaternion using <see cref="FP"/> fixed-point numbers.
 /// All operations are deterministic across platforms.
@@ -547,4 +547,5 @@ public readonly partial struct Quaternion : IEquatable<Quaternion>
         result = new Quaternion(x, y, z, w);
         return true;
     }
+}
 }

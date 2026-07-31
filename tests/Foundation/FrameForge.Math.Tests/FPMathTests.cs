@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 public class FPMathTests
 {
     // ========================================================================
@@ -202,4 +202,5 @@ public class FPMathTests
     [Fact] public void CeilToInt_Negative_Works() => Assert.Equal(-3, FPMath.CeilToInt(-(FP.FromInt(3) + FP.Half)));
     [Fact] public void RoundToInt_Negative_Works() => Assert.Equal(-4, FPMath.RoundToInt(-(FP.FromInt(3) + FP.Half)));
     [Fact] public void FloorToInt_Negative_Works() => Assert.Equal(-4, FPMath.FloorToInt(-(FP.FromInt(3) + FP.Half)));
+}
 }

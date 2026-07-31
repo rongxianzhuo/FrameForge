@@ -2,8 +2,8 @@ using FrameForge.Foundation.FixedPoint;
 using FrameForge.Foundation.Math;
 using Xunit;
 
-namespace FrameForge.Foundation.Math.Tests;
-
+namespace FrameForge.Foundation.Math.Tests
+{
 public class MathExTests
 {
     // ========================================================================
@@ -87,4 +87,5 @@ public class MathExTests
         Assert.Equal(16, MathEx.NextPowerOfTwo(9));
         Assert.Equal(128, MathEx.NextPowerOfTwo(100));
     }
+}
 }
