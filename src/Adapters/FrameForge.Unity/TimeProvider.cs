@@ -1,6 +1,7 @@
 using FrameForge.Foundation.FixedPoint;
 
-namespace FrameForge.Adapters.Unity;
+namespace FrameForge.Adapters.Unity
+{
 
 /// <summary>
 /// Provides deterministic deltaTime to FrameForge components at runtime.
@@ -53,4 +54,5 @@ public static class TimeProvider
     /// For diagnostics and debugging only — do NOT use in game logic.
     /// </summary>
     public static float RawUnityDeltaTime { get; internal set; }
+}
 }

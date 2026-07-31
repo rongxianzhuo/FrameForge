@@ -7,7 +7,8 @@ using UTransform = UnityEngine.Transform;
 using UGameObject = UnityEngine.GameObject;
 using UObject = UnityEngine.Object;
 
-namespace FrameForge.Adapters.Unity;
+namespace FrameForge.Adapters.Unity
+{
 
 /// <summary>
 /// The bridge MonoBehaviour that connects FrameForge's logical scene to Unity's
@@ -258,4 +259,5 @@ public class FrameForgeHost : MonoBehaviour
             SyncGameObjectRecursive(child);
         }
     }
+}
 }
