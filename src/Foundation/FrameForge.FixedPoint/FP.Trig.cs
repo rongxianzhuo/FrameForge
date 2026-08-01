@@ -54,8 +54,10 @@ public readonly partial struct FP
         FP step = piOver2 / FromInt(TRIG_TABLE_SIZE - 1);
         _trigStepRaw = step.RawValue;
 
-        // Inverse step for fast index computation: (1 << 32) / _trigStepRaw
-        _trigInvStepRaw = (long)(((Int128)1 << 32) / (ulong)_trigStepRaw);
+        // Inverse step for fast index computation: 2^32 / _trigStepRaw.
+        // Both operands fit comfortably in 64-bit unsigned, so plain 64-bit
+        // division suffices (no 128-bit helper needed).
+        _trigInvStepRaw = (long)((1L << 32) / (ulong)_trigStepRaw);
 
         // --- Compute sin(step) via Taylor series ----------------------------
         // step ≈ 0.001534 rad → step³/6 ≈ 6e-10 (barely above Epsilon)
@@ -125,8 +127,10 @@ public readonly partial struct FP
             return SinTable[TRIG_TABLE_SIZE - 1];
 
         // Compute index: angle / step
-        // index_frac = angleRaw * _trigInvStepRaw >> 32
-        long indexFrac = (long)(((Int128)angleRaw * _trigInvStepRaw) >> 32);
+        // index_frac = (angleRaw * _trigInvStepRaw) >> 32
+        // Both operands are non-negative and fit in 64-bit; product fits in 64-bit
+        // unsigned (max 2^32 * 2^32 = 2^64, top bit truncated by >> 32).
+        long indexFrac = (long)((ulong)angleRaw * (ulong)_trigInvStepRaw >> 32);
         int index = (int)indexFrac;
         long t = angleRaw - index * _trigStepRaw; // Fractional part (in raw units)
 
@@ -137,8 +141,10 @@ public readonly partial struct FP
         long hi = SinTable[index + 1];
 
         // Linear interpolation: lo + (hi - lo) * t / step
+        // All operands are signed 64-bit; (diff * t) may overflow 64-bit signed
+        // but the result is bounded. Use 128-bit math for safety.
         long diff = hi - lo;
-        long interpolated = (long)(((Int128)diff * t) / _trigStepRaw);
+        long interpolated = Int128Math.MultiplyShiftRight(diff, t, 0) / _trigStepRaw;
         return lo + interpolated;
     }
 

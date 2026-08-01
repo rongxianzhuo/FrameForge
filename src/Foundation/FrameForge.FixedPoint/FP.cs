@@ -283,7 +283,8 @@ public readonly partial struct FP : IEquatable<FP>, IComparable<FP>
 
             // fracRaw / denominator * 2^32, but we need to preserve precision
             // Compute: (fracRaw << 32) / denominator
-            fracRaw = (long)(((Int128)fracRaw << 32) / denominator);
+            // Int128 not available in Unity — use internal 128-bit math helper.
+            fracRaw = Int128Math.ShiftLeftDivide(fracRaw, denominator, 32);
         }
 
         long raw = (intPart << 32) | (fracRaw & FRAC_MASK);
@@ -375,23 +376,25 @@ public readonly partial struct FP : IEquatable<FP>, IComparable<FP>
     public static FP operator -(FP v) => new(-v.RawValue);
 
     /// <summary>
-    /// Multiplies two fixed-point numbers using <see cref="Int128"/> to prevent overflow.
+    /// Multiplies two fixed-point numbers using internal 128-bit arithmetic
+    /// (<see cref="Int128Math"/>) to prevent overflow. Replaces <c>System.Int128</c>
+    /// which is not available in Unity.
     /// </summary>
     public static FP operator *(FP a, FP b)
     {
-        var product = (Int128)a.RawValue * b.RawValue;
-        return new FP((long)(product >> 32));
+        return new FP(Int128Math.MultiplyShiftRight(a.RawValue, b.RawValue, 32));
     }
 
     /// <summary>
-    /// Divides two fixed-point numbers using <see cref="Int128"/> for precision.
+    /// Divides two fixed-point numbers using internal 128-bit arithmetic
+    /// (<see cref="Int128Math"/>) for precision. Replaces <c>System.Int128</c>
+    /// which is not available in Unity.
     /// </summary>
     public static FP operator /(FP a, FP b)
     {
         if (b.RawValue == 0)
             throw new DivideByZeroException("Division by zero in fixed-point arithmetic.");
-        var dividend = (Int128)a.RawValue << 32;
-        return new FP((long)(dividend / b.RawValue));
+        return new FP(Int128Math.ShiftLeftDivide(a.RawValue, b.RawValue, 32));
     }
 
     /// <summary>
@@ -595,8 +598,10 @@ public readonly partial struct FP : IEquatable<FP>, IComparable<FP>
         long fracRaw = absRaw & FRAC_MASK;
 
         // Compute 6 fractional digits: fracRaw * 1_000_000 / 2^32, rounded
-        // Use Int128 to avoid overflow
-        long fracScaled = (long)(((Int128)fracRaw * RAW_ONE_MILLION + (RAW_ONE >> 1)) >> 32);
+        // fracRaw in [0, 2^32) and 1_000_000 fit in 64-bit unsigned, so the product
+        // is at most ~4.3e15 (well under long.MaxValue 9.2e18). No 128-bit needed here,
+        // but we use Int128Math for uniform style and future-proofing.
+        long fracScaled = Int128Math.MultiplyAddShiftRight(fracRaw, RAW_ONE_MILLION, RAW_ONE >> 1, 32);
 
         // Handle carry from rounding
         if (fracScaled >= RAW_ONE_MILLION)
