@@ -235,22 +235,22 @@ public class FrameForgeHost : MonoBehaviour
 
             // Local position: FP → float (safe — this is render-only, not logic)
             unityTransform.localPosition = new UnityEngine.Vector3(
-                (float)(double)ffTransform.LocalPosition.X,
-                (float)(double)ffTransform.LocalPosition.Y,
-                (float)(double)ffTransform.LocalPosition.Z);
+                ffTransform.LocalPosition.X.ToFloat(),
+                ffTransform.LocalPosition.Y.ToFloat(),
+                ffTransform.LocalPosition.Z.ToFloat());
 
             // Local rotation: FP → float
             unityTransform.localRotation = new UnityEngine.Quaternion(
-                (float)(double)ffTransform.LocalRotation.X,
-                (float)(double)ffTransform.LocalRotation.Y,
-                (float)(double)ffTransform.LocalRotation.Z,
-                (float)(double)ffTransform.LocalRotation.W);
+                ffTransform.LocalRotation.X.ToFloat(),
+                ffTransform.LocalRotation.Y.ToFloat(),
+                ffTransform.LocalRotation.Z.ToFloat(),
+                ffTransform.LocalRotation.W.ToFloat());
 
             // Local scale: FP → float
             unityTransform.localScale = new UnityEngine.Vector3(
-                (float)(double)ffTransform.LocalScale.X,
-                (float)(double)ffTransform.LocalScale.Y,
-                (float)(double)ffTransform.LocalScale.Z);
+                ffTransform.LocalScale.X.ToFloat(),
+                ffTransform.LocalScale.Y.ToFloat(),
+                ffTransform.LocalScale.Z.ToFloat());
         }
 
         // Recurse into children
